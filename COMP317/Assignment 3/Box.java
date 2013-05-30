@@ -1,4 +1,8 @@
-
+/**
+ * Box.java
+ * @date 19 May 2013
+ * @author Steven Crake 1117696
+ */
 public class Box implements Comparable<Box> 
 {
 	private int id;
@@ -12,7 +16,9 @@ public class Box implements Comparable<Box>
 	public int getH() { return h; }
 	public int getW() { return w; }
 	public int getD() { return d; }
-	
+	/**
+	 * Constructor for the box, determines its dimensions since depth must always be greater than or equal to width.
+	 */
 	public Box(int id, int orientation, int h, int w, int d)
 	{
 		this.id = id;

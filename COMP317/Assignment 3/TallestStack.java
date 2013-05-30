@@ -1,3 +1,8 @@
+/**
+ * TallestStack.java
+ * @date 19 May 2013
+ * @author Steven Crake 1117696
+ */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -6,10 +11,14 @@ import java.util.List;
 public class TallestStack 
 {
 	private static List<Box> boxes;
-	
+	/**
+	 * main method of The program to find the tallest possible stack from a list of boxes
+	 * 
+	 * This method reads in the box list from a file and 
+	 */
 	public static void main(String[] args) 
 	{
-		if(args.length != 1)
+		if(args.length != 1) //must pass in atleast one arg, a file path to a box list.
 		{
 			System.err.println("Usage: TallestStack [boxfile]");
 			System.exit(1);
@@ -20,6 +29,7 @@ public class TallestStack
 		
 		try
 		{
+			//Initialize the reader to read in the file specified.
 			reader = new BufferedReader(new FileReader(args[0]));
 			boxes = new ArrayList<Box>();
 			String line;
@@ -34,7 +44,7 @@ public class TallestStack
 				boxes.add(b);
 			}
 			reader.close();
-			
+			//Print out the tallest stack height
 			System.out.println("The tallest stack possible has height '" + findTallestStack() + "'.");
 		}
 		catch(Exception ex)
@@ -104,7 +114,7 @@ public class TallestStack
 
 		}
 		
-		//choose the greatest maxStackHeight[i]
+		//find the greatest maxStackHeight[i]
 		int max = -1;
 		int maxIndex = 0;
 		for(int i = 0; i < boxes.size(); i++)
